@@ -8,12 +8,14 @@ public class AccountTest {
     Account account;
     Commit commit;
     Repository repository;
+    Repository repository2;
 
 
     @Before
     public void before(){
         account = new Account("codeboy71", "Jon Snow", AccountType.FREE);
         repository = new Repository("CountMe!", "Calorie Counting App", RepositoryType.PUBLIC);
+        repository2 = new Repository("VetBook", "A vet management App", RepositoryType.PUBLIC);
         commit = new Commit("added fancy graph", CommitType.FEATURE, 123456);
     }
 
@@ -52,8 +54,9 @@ public class AccountTest {
 
     @Test
     public void repositoriesHasObjects(){
-//        account.addRepository(repository);
-        assertEquals(0, account.getRepositorySize());
+        account.addRepository(repository2);
+        account.addRepository(repository);
+        assertEquals(1, account.getRepositoryCount());
     }
 
 }
