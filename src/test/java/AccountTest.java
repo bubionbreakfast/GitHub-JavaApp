@@ -7,11 +7,14 @@ public class AccountTest {
 
     Account account;
     Commit commit;
+    Repository repository;
 
 
     @Before
     public void before(){
         account = new Account("codeboy71", "Jon Snow", AccountType.FREE);
+        repository = new Repository("CountMe!", "Calorie Counting App", RepositoryType.PUBLIC);
+        commit = new Commit("added fancy graph", CommitType.FEATURE, 123456);
     }
 
     @Test
@@ -49,7 +52,7 @@ public class AccountTest {
 
     @Test
     public void repositoriesHasObjects(){
-//        account.getRepositorySize();
+//        account.addRepository(repository);
         assertEquals(0, account.getRepositorySize());
     }
 

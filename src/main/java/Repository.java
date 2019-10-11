@@ -11,7 +11,7 @@ public class Repository {
         this.name = name;
         this.description = description;
         this.repositoryType = repositoryType;
-        this.commits = commits;
+        this.commits = new ArrayList<Commit>();
     }
 
     public String getName() {
@@ -30,6 +30,10 @@ public class Repository {
         return commits;
     }
 
+    public int getCommitCount(){
+        return this.commits.size();
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -44,5 +48,9 @@ public class Repository {
 
     public void setCommits(ArrayList<Commit> commits) {
         this.commits = commits;
+    }
+
+    public void addCommit(Commit commit){
+        this.commits.add(commit);
     }
 }

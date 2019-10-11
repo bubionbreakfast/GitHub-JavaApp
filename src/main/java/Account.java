@@ -1,16 +1,19 @@
+import com.sun.jmx.mbeanserver.Repository;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Account {
 
     private String username;
     private String name;
-    private HashMap<String, Repository> repositories;
+    private ArrayList<Repository> repositories;
     private AccountType accountType;
 
     public Account(String username, String name, AccountType accountType) {
         this.username = username;
         this.name = name;
-        this.repositories = new HashMap<String, Repository>();
+        this.repositories = new ArrayList<Repository>();
         this.accountType = accountType;
     }
 
@@ -22,7 +25,7 @@ public class Account {
         return name;
     }
 
-    public HashMap<String, Repository> getRepositories() {
+    public ArrayList<Repository> getRepositories() {
         return repositories;
     }
 
@@ -38,13 +41,18 @@ public class Account {
         this.name = name;
     }
 
-    public void setRepositories(HashMap<String, Repository> repositories) {
+    public void setRepositories(ArrayList<Repository> repositories) {
         this.repositories = repositories;
     }
 
     public int getRepositorySize(){
         return this.repositories.size();
     }
+
+//    public void addRepository(){
+//        Repository repository = new Repository(name, description, repositoryType);
+//                repositories.add(repository);
+//    }
 
     public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
