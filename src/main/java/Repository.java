@@ -64,4 +64,15 @@ public class Repository {
         return commitObject;
 
     }
+
+    public Commit findCommitByCommitType(CommitType commitType){
+        Commit commitObject = null;
+        for (Commit commit : this.commits){
+            if(commitType == commit.getCommitType()){
+                commitObject = commit;
+            }
+        }
+        return commitObject;
+
+    }
 }
