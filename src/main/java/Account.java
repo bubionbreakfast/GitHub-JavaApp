@@ -1,7 +1,6 @@
 import com.sun.jmx.mbeanserver.Repository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Account {
 
@@ -46,16 +45,16 @@ public class Account {
         return this.repositories.size();
     }
 
-    public void addRepository(Repository repository){
-        this.repositories.add(repository);
-    }
+//    public void addRepository(Repository repository){
+//        this.repositories.add(repository);
+//    }
 
     public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
     }
 
 
-//    public void addRepository(Repository repository) {
-//        this.repositories.add(repository);
-//    }
+    public void addRepository(Repository repository) {
+        this.repositories.add(repository);
+    }
 }

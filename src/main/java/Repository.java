@@ -53,4 +53,15 @@ public class Repository {
     public void addCommit(Commit commit){
         this.commits.add(commit);
     }
+
+    public Commit findCommitById(int id) {
+        Commit commitObject = null;
+        for(Commit commit : this.commits){
+            if (id  == commit.getId()){
+                commitObject = commit;
+            }
+        }
+        return commitObject;
+
+    }
 }

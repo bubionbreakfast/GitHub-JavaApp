@@ -1,12 +1,12 @@
 public class Commit {
     private String description;
     private CommitType commitType;
-    private int uniqueId;
+    private int id;
 
-    public Commit(String description, CommitType commitType, int uniqueId) {
+    public Commit(String description, CommitType commitType, int id) {
         this.description = description;
         this.commitType = commitType;
-        this.uniqueId = uniqueId;
+        this.id = id;
     }
 
     public String getDescription() {
@@ -25,11 +25,11 @@ public class Commit {
         this.commitType = commitType;
     }
 
-    public int getUniqueId() {
-        return uniqueId;
+    public int getId() {
+        return this.id;
     }
 
-    public void setUniqueId(int uniqueId) {
-        this.uniqueId = uniqueId;
+    public void setUniqueId(int id) {
+        this.id = id;
     }
 }
