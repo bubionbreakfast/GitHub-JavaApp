@@ -64,7 +64,7 @@ public class AccountTest {
 
     @Test
     public void canGetRepositoryByName(){
-        assertEquals(account2, account.getAccountByName(account2));
+        assertEquals(account, account.getAccountByName("Jon Snow"));
     }
 
 }
