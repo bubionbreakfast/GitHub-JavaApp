@@ -9,12 +9,14 @@ public class RepositoryTest {
     Repository repository;
     Commit commit;
     Commit commit2;
+    Commit commit3;
 
     @Before
     public void before(){
         repository = new Repository("Vet Book", "A vet management App", RepositoryType.PUBLIC );
         commit = new Commit("added home button", CommitType.FEATURE, 9991);
         commit2 = new Commit("added back button", CommitType.FEATURE, 9992);
+        commit3 = new Commit("added back button", CommitType.BUGFIX, 9993);
     }
 
     @Test
@@ -56,7 +58,8 @@ public class RepositoryTest {
     public void canGetCommitByFeature(){
         repository.addCommit(commit);
         repository.addCommit(commit2);
-        assertEquals(CommitType.FEATURE, commit.getCommitType());
+        repository.addCommit(commit3);
+        assertEquals(CommitType.BUGFIX,  repository.findCommitByCommitType(CommitType.BUGFIX));
     }
 
 

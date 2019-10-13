@@ -13,12 +13,16 @@ public class Commit {
         return description;
     }
 
+    public String getCommitTypeValue(){
+        return this.commitType.getValue();
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public CommitType getCommitType() {
-        return commitType;
+    public CommitType getCommitType(CommitType commitType) {
+        return this.commitType;
     }
 
     public void setCommitType(CommitType commitType) {

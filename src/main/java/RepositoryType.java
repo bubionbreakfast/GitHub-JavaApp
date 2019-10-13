@@ -6,4 +6,9 @@ public enum RepositoryType {
 
     RepositoryType(String value) {this.value = value;}
 
+    public String getValue()
+    {
+        return value;
+    }
+
 }

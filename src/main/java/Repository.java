@@ -6,12 +6,19 @@ public class Repository {
     private String description;
     private RepositoryType repositoryType;
     private ArrayList<Commit> commits;
+    private ArrayList<Commit> commitObjects;
+    private ArrayList<CommitType> commitObjects2;
+    private ArrayList<Commit> commitObjects3;
+    private Commit commit;
 
     public Repository(String name, String description, RepositoryType repositoryType) {
         this.name = name;
         this.description = description;
         this.repositoryType = repositoryType;
         this.commits = new ArrayList<Commit>();
+        this.commitObjects = new ArrayList<Commit>();
+        this.commitObjects2 = new ArrayList<CommitType>();
+        this.commitObjects3 = new ArrayList<Commit>();
     }
 
     public String getName() {
@@ -65,14 +72,57 @@ public class Repository {
 
     }
 
-    public Commit findCommitByCommitType(CommitType commitType){
-        Commit commitObject = null;
-        for (Commit commit : this.commits){
-            if(commitType == commit.getCommitType()){
-                commitObject = commit;
-            }
-        }
-        return commitObject;
+//    public ArrayList<CommitType> findCommitByCommitType(CommitType commitType){
+//        for (Commit commit : this.commits){
+//            if(commitType == commit.getCommitType()){
+////                this.commitObjects = new ArrayList<CommitType>();
+//                this.commitObjects.add(commit);
+//            }
+//        }
+//        return commitObjects;
+//
+//    }
+
+//    public Commit findCommitByCommitType(CommitType commitType){
+//        ArrayList commitObject = null;
+//
+//        for (Commit commit : this.commits){
+//            if(this.commits.contains(commit.getCommitTypeValue())){
+//                commitObject.add(commit.getDescription());
+//            }
+//        }
+//        return commitObject;
+//    }
+
+//    public Commit findCommitByCommitType(CommitType commitType) {
+////        for (Commit commit : this.commits) {
+////            for (CommitType commitType : CommitType.values()) {
+//                if (CommitType.values() == commitType) {
+//                    this.commitObjects3 = new ArrayList<Commit>();
+//                    commitObjects3.add(commit);
+//                }
+//            }
+//            return commitObjects3;
+//        }
+//    }
+
+//    public Commit findCommitByCommitType(CommitType commitType) {
+//        for (Commit commit : this.commits){
+//            for (CommitType type : CommitType.values()) {
+//                if (CommitType.values(commitType)) ;
+//                commitObjects3.add(commit);
+//
+//            }
+//        }
+//
+//        return this.commitObjects3;
+//
+//    }
+
+    public CommitType findCommitByCommitType(CommitType commitType) {
+            return  commit.getCommitType(commitType);
 
     }
+
 }
+
