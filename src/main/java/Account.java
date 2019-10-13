@@ -1,19 +1,17 @@
-import com.sun.jmx.mbeanserver.Repository;
-
 import java.util.ArrayList;
 
 public class Account {
 
     private String username;
     private String name;
-    private ArrayList<Repository> repositories;
     private AccountType accountType;
+    private ArrayList<Repository> repositories;
 
     public Account(String username, String name, AccountType accountType) {
         this.username = username;
         this.name = name;
-        this.repositories = new ArrayList<Repository>();
         this.accountType = accountType;
+        this.repositories = new ArrayList<Repository>();
     }
 
     public String getUsername() {
@@ -45,16 +43,12 @@ public class Account {
         return this.repositories.size();
     }
 
-//    public void addRepository(Repository repository){
-//        this.repositories.add(repository);
-//    }
+    public void addRepository(Repository repository){
+         this.repositories.add(repository);
+    }
 
     public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
     }
 
-
-    public void addRepository(Repository repository) {
-        this.repositories.add(repository);
-    }
 }

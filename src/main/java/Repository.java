@@ -6,19 +6,15 @@ public class Repository {
     private String description;
     private RepositoryType repositoryType;
     private ArrayList<Commit> commits;
-    private ArrayList<Commit> commitObjects;
-    private ArrayList<CommitType> commitObjects2;
-    private ArrayList<Commit> commitObjects3;
-    private Commit commit;
+//    private ArrayList<Commit> commitObjects;
+//    private Commit commit;
 
     public Repository(String name, String description, RepositoryType repositoryType) {
         this.name = name;
         this.description = description;
         this.repositoryType = repositoryType;
         this.commits = new ArrayList<Commit>();
-        this.commitObjects = new ArrayList<Commit>();
-        this.commitObjects2 = new ArrayList<CommitType>();
-        this.commitObjects3 = new ArrayList<Commit>();
+//        this.commitObjects = new ArrayList<Commit>();
     }
 
     public String getName() {
@@ -119,10 +115,10 @@ public class Repository {
 //
 //    }
 
-    public CommitType findCommitByCommitType(CommitType commitType) {
-            return  commit.getCommitType(commitType);
-
-    }
+//    public CommitType findCommitByCommitType(CommitType commitType) {
+//            return  commit.getCommitType(commitType);
+//
+//    }
 
 }
 

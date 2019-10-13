@@ -1,3 +1,4 @@
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class AccountTest {
     @Before
     public void before(){
         account = new Account("codeboy71", "Jon Snow", AccountType.FREE);
-        repository = new Repository("CountMe!", "Calorie Counting App", RepositoryType.PUBLIC);
+        repository = new Repository("CountMe!", "Calorie Counting App", RepositoryType.PRIVATE);
         repository2 = new Repository("VetBook", "A vet management App", RepositoryType.PUBLIC);
         commit = new Commit("added fancy graph", CommitType.FEATURE, 123456);
     }
@@ -52,11 +53,11 @@ public class AccountTest {
         assertEquals(AccountType.PRO, account.getAccountType());
     }
 
-//    @Test
-//    public void repositoriesHasObjects(){
-//        account.addRepository(repository2);
-//        account.addRepository(repository);
-//        assertEquals(1, account.getRepositoryCount());
-//    }
+    @Test
+    public void repositoriesHasObjects(){
+        account.addRepository(repository2);
+        account.addRepository(repository);
+        assertEquals(2, account.getRepositoryCount());
+    }
 
 }

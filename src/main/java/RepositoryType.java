@@ -4,7 +4,9 @@ public enum RepositoryType {
 
     private final String value;
 
-    RepositoryType(String value) {this.value = value;}
+    RepositoryType(String value) {
+        this.value = value;
+    }
 
     public String getValue()
     {
