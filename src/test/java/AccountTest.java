@@ -9,6 +9,7 @@ public class AccountTest {
     Account account;
     Account account2;
     Commit commit;
+    Commit commit2;
     Repository repository;
     Repository repository2;
 
@@ -20,6 +21,10 @@ public class AccountTest {
         repository = new Repository("CountMe!", "Calorie Counting App", RepositoryType.PRIVATE);
         repository2 = new Repository("VetBook", "A vet management App", RepositoryType.PUBLIC);
         commit = new Commit("added fancy graph", CommitType.FEATURE, 123456);
+        commit2 = new Commit("added delete button", CommitType.FEATURE, 7777);
+        repository.addCommit(commit);
+        repository.addCommit(commit2);
+        repository2.addCommit(commit2);
     }
 
     @Test
@@ -65,6 +70,12 @@ public class AccountTest {
     @Test
     public void canGetRepositoryByName(){
         assertEquals(account, account.getAccountByName("Jon Snow"));
+    }
+
+    @Test
+    public void canGetRepoWithMostCommits(){
+//        repository.mostCommits();
+        assertEquals(repository, repository.mostCommits());
     }
 
 }

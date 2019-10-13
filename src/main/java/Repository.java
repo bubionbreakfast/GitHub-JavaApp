@@ -68,6 +68,18 @@ public class Repository {
 
     }
 
+    public Repository mostCommits() {
+        int biggest = 0;
+        Repository most = null;
+        for(Commit commit : this.commits){
+            if(getCommitCount() > biggest){
+                biggest = getCommitCount();
+                most = this;
+            }
+        }
+        return most;
+    }
+
 //    public ArrayList<CommitType> findCommitByCommitType(CommitType commitType){
 //        for (Commit commit : this.commits){
 //            if(commitType == commit.getCommitType()){
