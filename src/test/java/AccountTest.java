@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class AccountTest {
 
     Account account;
+    Account account2;
     Commit commit;
     Repository repository;
     Repository repository2;
@@ -15,6 +16,7 @@ public class AccountTest {
     @Before
     public void before(){
         account = new Account("codeboy71", "Jon Snow", AccountType.FREE);
+        account2 = new Account("codeboy77", "Jon Rain", AccountType.PRO);
         repository = new Repository("CountMe!", "Calorie Counting App", RepositoryType.PRIVATE);
         repository2 = new Repository("VetBook", "A vet management App", RepositoryType.PUBLIC);
         commit = new Commit("added fancy graph", CommitType.FEATURE, 123456);
@@ -58,6 +60,11 @@ public class AccountTest {
         account.addRepository(repository2);
         account.addRepository(repository);
         assertEquals(2, account.getRepositoryCount());
+    }
+
+    @Test
+    public void canGetRepositoryByName(){
+        assertEquals(account2, account.getAccountByName(account2));
     }
 
 }

@@ -51,4 +51,11 @@ public class Account {
         this.accountType = accountType;
     }
 
+    public Account getAccountByName(Account account){
+            if(account.name == account.getName());
+        return account;
+
+//    }
+    }
+
 }
